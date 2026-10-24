@@ -1,0 +1,31 @@
+@extends('layout')
+
+@section('title', 'Customer Accounts')
+
+@section('content')
+    <div class="card">
+        <h1>Customer Accounts</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach ($customers as $customer)
+                    <tr>
+                        <td>{{ $customer['id'] }}</td>
+                        <td>{{ $customer->full_name }}</td>
+                        <td>{{ $customer['email'] }}</td>
+                        <td>{{ $customer['phone'] }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+@endsection
